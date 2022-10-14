@@ -1,0 +1,181 @@
+<!--Main Page-->
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Jacob Sedar Project 1</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Project1.html">Home</a></li>
+        <li><a href="Resume.html">Resume</a></li>
+        <li><a href="ContactMe.html">Contact Me</a></li>
+        <li><a href="About.html">About</a></li>   
+        <li></li> 
+      </ul>
+   <div style="position: absolute; right: 0;" id="clockdate">
+      <div class="clockdate-wrapper">
+        <div id="clock"></div>
+        <div id="date"></div>
+      </div>
+    </div>
+  </nav>
+  <meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width"> 
+<title>Intro Page</title> 
+<script>function currentTime() 
+  {
+    let date = new Date(); 
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+    let session = "AM";
+  
+      
+    if(hh > 12){
+        session = "PM";
+     }
+  
+     hh = (hh < 10) ? "0" + hh : hh;
+     mm = (mm < 10) ? "0" + mm : mm;
+     ss = (ss < 10) ? "0" + ss : ss;
+      
+     let time = hh + ":" + mm + ":" + ss + " " + session;
+  
+    document.getElementById("clock").innerText = time; 
+    var t = setTimeout(function(){ currentTime() }, 1000); 
+  
+  }
+  
+  currentTime();
+  </script>
+<style> 
+  h1 {
+ color: red;
+  }
+  body
+  {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  /*clock*/
+  @font-face{
+    font-family: 'Digital-7';
+    src:  url('fonts/digital-7.ttf') format('woff2'),   b ,g,mdrx
+    url('digital-7.woff') format('woff');
+}
+.clockdate-wrapper {
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, skyblue, blue); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding:25px;
+    max-width:350px;
+    width:100%;
+    text-align:center;
+    border-radius:5px;
+    margin:0 auto;
+  
+}
+#clock{
+    font-family: Digital-7, "Times New Roman";
+    font-size:60px;
+    text-shadow:0px 0px 1px #fff;
+    color:rgb(0, 0, 0);
+}
+#clock span {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow:0px 0px 1px rgb(0, 0, 0, 0.8);
+    font-size:50px;
+    position:relative;
+    top:-5px;
+    left:10px;
+}
+#date {
+    letter-spacing:3px;
+    font-size:14px;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    color: orange;
+}
+/*end of clock*/
+#footer
+{
+  height: 0%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  grid-area: footer;
+}
+
+ </style>
+</head> 
+<head>
+<title>About</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body> 
+<head>
+  <script>
+    
+  //clock function
+  function startTime() 
+  {
+    var today = new Date();
+    var hr = today.getHours();
+    var min = today.getMinutes();
+    var sec = today.getSeconds();
+    ap = (hr < 12 && hr > 0) ? "<span>AM</span>" : "<span>PM</span>";
+    hr = (hr == 0) ? 12 : hr;
+    hr = (hr > 12 && hr <= 24) ? hr - 12 : hr;
+    //Add a zero in front of numbers<10
+    hr = checkTime(hr);
+    min = checkTime(min);
+    sec = checkTime(sec);
+    document.getElementById("clock").innerHTML = hr + ":" + min + ":" + sec + " " + ap;
+    
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var curWeekDay = days[today.getDay()];
+    var curDay = today.getDate();
+    var curMonth = months[today.getMonth()];
+    var curYear = today.getFullYear();
+    var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
+    document.getElementById("date").innerHTML = date;
+    
+    var time = setTimeout(function(){ startTime() }, 500);
+}
+function checkTime(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+startTime();
+</script>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style ="background-color: skyblue;"> 
+<h1>Welcome to My Website!</h1>
+  <p>On this website, it will cover my resume, my previous work experience, some 
+    facts about myself, and how to contact me.</p> 
+    <img src="My Girlfriend and I 1.jpg" class="img-rounded" 
+  alt="My Girlfriend and I" style="float: center; height: 500px; width: 500px; padding-right: 40px;">
+</body>
+<div id="footer">    
+  <marquee id = "content" width = "device-width" behavior="scroll" direction="left">Welcome to my website...                        Do not mind the mess</marquee>
+ </div>
+</html>
+<!--inspiration from:
+https://www.codehim.com/date-time/javascript-digital-clock-with-date/ for clock and date function
+-->
